@@ -11,7 +11,7 @@ void UInv_HUDWidget::NativeOnInitialized()
 {
 	Super::NativeOnInitialized();
 
-	UInv_InventoryComponent* InventoryComponent = UUInv_InventoryStatics::GetInventoryComponent(GetOwningPlayer());
+	UInv_InventoryComponent* InventoryComponent = UInv_InventoryStatics::GetInventoryComponent(GetOwningPlayer());
 	if (IsValid(InventoryComponent))
 	{
 		InventoryComponent->NoRoomInInventory.AddDynamic(this, &ThisClass::UInv_HUDWidget::OnNoRoom);
