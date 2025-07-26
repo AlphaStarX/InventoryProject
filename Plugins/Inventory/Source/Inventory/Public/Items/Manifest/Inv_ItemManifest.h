@@ -11,6 +11,7 @@
  * for creating a new Inventory Item
  */
 
+struct FInv_ItemFragment;
 class UInv_InventoryItem;
 enum class EInv_ItemCategory : uint8;
 
@@ -28,11 +29,16 @@ public:
 
 private:
 
+	UPROPERTY(EditAnywhere, Category = "Inventory", meta = (ExcludeBaseStruct))
+	TArray<TInstancedStruct<FInv_ItemFragment>> Fragments;
+
 	UPROPERTY(EditAnywhere, Category = "Inventory")
 	EInv_ItemCategory ItemCategory{EInv_ItemCategory::None};
 
 	UPROPERTY(EditAnywhere, Category = "Inventory")
 	FGameplayTag ItemType;
+
+	
 	
 };
 
